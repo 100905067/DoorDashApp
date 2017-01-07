@@ -1,6 +1,5 @@
 package com.example.amrit.doordashapp.Activity;
 
-import android.support.test.espresso.core.deps.guava.primitives.Booleans;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -8,17 +7,19 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.example.amrit.doordashapp.Adapter.RestaurantAdapter;
 import com.example.amrit.doordashapp.AsyncTask.SearchRestauratantsByLocation;
 import com.example.amrit.doordashapp.Interface.AsyncResponse;
+import com.example.amrit.doordashapp.Interface.OnItemClick;
 import com.example.amrit.doordashapp.Pojos.Restaurant;
 import com.example.amrit.doordashapp.R;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements OnItemClick {
 
     private static final String LOG_TAG = MainActivity.class.getSimpleName();
     private Button searchRestaurants;
@@ -39,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
         restaurantAdapter = new RestaurantAdapter(rList, getApplicationContext());
         rvRecyclerView.setAdapter(restaurantAdapter);
 
+        restaurantAdapter.onItemClick = this;
 
         searchRestaurants.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,5 +60,10 @@ public class MainActivity extends AppCompatActivity {
                 searchRestauratantsByLocation.execute();
             }
         });
+    }
+
+    @Override
+    public void onItemClickListener(Restaurant restaurant) {
+        Toast.makeText(getApplicationContext(), restaurant.getName(), Toast.LENGTH_SHORT).show();
     }
 }

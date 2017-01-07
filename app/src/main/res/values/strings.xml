@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">DoorDashApp</string>
+    <string name="app_name">DoorDash</string>
     <string name="search">Search Restaurants NearBy</string>
     <string name="resName">resName</string>
 </resources>

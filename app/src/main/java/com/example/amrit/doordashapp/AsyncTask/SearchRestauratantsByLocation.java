@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by amrit on 1/5/2017.
+ * Created by amrita on 1/5/2017.
  */
 
 public class SearchRestauratantsByLocation extends AsyncTask<Void,Void, List<Restaurant>> {

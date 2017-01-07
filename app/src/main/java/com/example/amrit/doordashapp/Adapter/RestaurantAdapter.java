@@ -9,22 +9,24 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.amrit.doordashapp.Interface.OnItemClick;
 import com.example.amrit.doordashapp.Pojos.Restaurant;
 import com.example.amrit.doordashapp.R;
-import com.squareup.picasso.MemoryPolicy;
-import com.squareup.picasso.NetworkPolicy;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
 /**
- * Created by amrit on 1/6/2017.
+ * Created by amrita on 1/6/2017.
  */
 
 public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.CustomViewHolder> {
     private static final String LOG_TAG = RestaurantAdapter.class.getSimpleName() ;
     List<Restaurant> restaurantList;
     Context context;
+
+
+    public OnItemClick onItemClick;
 
     public RestaurantAdapter(List<Restaurant> rList, Context c) {
         Log.e(LOG_TAG,"inside constructor");
@@ -68,6 +70,17 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Cu
             rDescription = (TextView) itemView.findViewById(R.id.resDesc);
             rAddress = (TextView) itemView.findViewById(R.id.resAddress);
             rImage = (ImageView) itemView.findViewById(R.id.resImage);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    int pos = getAdapterPosition();
+                    if(pos!=RecyclerView.NO_POSITION) {
+                        Restaurant clickedRestaurant = restaurantList.get(pos);
+                        onItemClick.onItemClickListener(clickedRestaurant);
+                    }
+                }
+            });
         }
     }
 }
