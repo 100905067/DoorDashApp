@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="searchRestaruants" type="id">searchRestaruants</item>
+    <item name="searchRestaurants" type="id">searchRestaurants</item>
+    <item name="resName" type="id">resName</item>
+    <item name="resDesc" type="id">resDesc</item>
+    <item name="resAddress" type="id">resAddress</item>
+    <item name="resImage" type="id">resImage</item>
+    <item name="recyclerView" type="id">recyclerView</item>
+</resources>
