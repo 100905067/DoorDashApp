@@ -6,18 +6,18 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.example.amrit.doordashapp.Adapter.RestaurantAdapter;
+import com.example.amrit.doordashapp.Interface.OnItemClick;
 import com.example.amrit.doordashapp.Pojos.Restaurant;
 import com.example.amrit.doordashapp.R;
-import com.example.amrit.doordashapp.SharedPreference;
+import com.example.amrit.doordashapp.Model.SharedPreference;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class FavouriteActivity extends AppCompatActivity {
+public class FavouriteActivity extends AppCompatActivity implements OnItemClick {
 
     private RecyclerView rvRecyclerView;
     private RestaurantAdapter restaurantAdapter;
@@ -37,6 +37,8 @@ public class FavouriteActivity extends AppCompatActivity {
 
         restaurantAdapter = new RestaurantAdapter(rList, getApplicationContext());
         rvRecyclerView.setAdapter(restaurantAdapter);
+
+        restaurantAdapter.onItemClick = this;
 
         populateFav();
 
@@ -63,4 +65,8 @@ public class FavouriteActivity extends AppCompatActivity {
     }
 
 
+    @Override
+    public void onItemClickListener(Restaurant restaurant) {
+        return;
+    }
 }

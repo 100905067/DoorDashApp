@@ -17,7 +17,7 @@ import com.example.amrit.doordashapp.Interface.AsyncResponse;
 import com.example.amrit.doordashapp.Interface.OnItemClick;
 import com.example.amrit.doordashapp.Pojos.Restaurant;
 import com.example.amrit.doordashapp.R;
-import com.example.amrit.doordashapp.SharedPreference;
+import com.example.amrit.doordashapp.Model.SharedPreference;
 
 import java.util.ArrayList;
 import java.util.List;

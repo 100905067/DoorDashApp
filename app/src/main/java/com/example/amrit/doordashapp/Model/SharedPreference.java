@@ -1,4 +1,4 @@
-package com.example.amrit.doordashapp;
+package com.example.amrit.doordashapp.Model;
 
 import android.content.Context;
 import android.content.SharedPreferences;
