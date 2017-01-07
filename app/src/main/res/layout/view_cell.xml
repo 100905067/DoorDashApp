@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@color/colorBlack"
     android:orientation="horizontal">
 
     <FrameLayout
@@ -20,21 +21,28 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="3"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="7dp">
 
         <TextView
             android:id="@id/resName"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorRed"
+            android:textSize="20dp"/>
 
         <TextView
             android:id="@id/resAddress"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorWhite"
+            android:textSize="10dp"/>
 
         <TextView
             android:id="@id/resDesc"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorWhite"
+            android:textSize="8dp"/>
     </LinearLayout>
 </LinearLayout>
