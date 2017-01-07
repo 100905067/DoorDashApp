@@ -13,6 +13,7 @@ public class Restaurant {
     private String url;
     private String address;
     private List<Menu> menuList;
+    private int favourite=0;
 
     public Restaurant(int id, String name, String description, String url, String address, List<Menu> menuList) {
         this.id = id;
@@ -41,5 +42,13 @@ public class Restaurant {
 
     public String getUrl() {
         return url;
+    }
+
+    public void setFavourite(int favourite) {
+        this.favourite = favourite;
+    }
+
+    public int getFavourite() {
+        return favourite;
     }
 }

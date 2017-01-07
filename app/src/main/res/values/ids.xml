@@ -7,4 +7,8 @@
     <item name="resAddress" type="id">resAddress</item>
     <item name="resImage" type="id">resImage</item>
     <item name="recyclerView" type="id">recyclerView</item>
+    <item name="company" type="id">company</item>
+    <item name="show" type="id">show</item>
+    <item name="cancel" type="id">cancel</item>
+    <item name="back" type="id">back</item>
 </resources>
